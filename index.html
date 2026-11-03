@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>NFT GIFT</title>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<style>
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+body {
+
+  margin: 0;
+
+  padding: 25px 15px;
+
+  min-height: 100vh;
+
+  background: linear-gradient(145deg,#090711,#26113f);
+
+  color: white;
+
+  font-family: Arial,sans-serif;
+
+}
+
+main {
+
+  max-width: 430px;
+
+  margin: 30px auto;
+
+  padding: 25px;
+
+  border: 1px solid #7545a9;
+
+  border-radius: 24px;
+
+  background: #171123;
+
+  text-align: center;
+
+}
+
+.gift {
+
+  font-size: 75px;
+
+}
+
+h1 {
+
+  color: #c69aff;
+
+  letter-spacing: 3px;
+
+}
+
+p {
+
+  color: #c7bbd5;
+
+  line-height: 1.6;
+
+}
+
+button {
+
+  width: 100%;
+
+  padding: 16px;
+
+  margin-top: 15px;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  background: #8046d5;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+}
+
+.gift-card {
+
+  margin-top: 15px;
+
+  padding: 18px;
+
+  background: #291d3d;
+
+  border-radius: 15px;
+
+}
+
+footer {
+
+  margin-top: 25px;
+
+  font-size: 12px;
+
+  color: #9186a5;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main>
+
+  <div class="gift">🎁</div>
+
+  <h1>NFT GIFT</h1>
+
+  <p>Добро пожаловать в мир Telegram NFT!</p>
+
+  <div class="gift-card">
+
+    <div style="font-size:40px">🌹</div>
+
+    <h3>Rose</h3>
+
+    <p>Коллекционный подарок</p>
+
+  </div>
+
+  <div class="gift-card">
+
+    <div style="font-size:40px">💎</div>
+
+    <h3>Diamond</h3>
+
+    <p>Коллекционный подарок</p>
+
+  </div>
+
+  <button onclick="connectTelegram()">
+
+    Открыть Telegram
+
+  </button>
+
+  <button onclick="showInfo()">
+
+    Как передать подарок
+
+  </button>
+
+  <footer>
+
+    Подарки передаются только с согласия владельца.
+
+    Демонстрационные карточки не являются реальными NFT.
+
+  </footer>
+
+</main>
+
+<script>
+
+const tg = window.Telegram.WebApp;
+
+tg.ready();
+
+tg.expand();
+
+function connectTelegram() {
+
+  window.open("https://t.me/P3PNFTGIFTS_BOT", "_blank");
+
+}
+
+function showInfo() {
+
+  alert("Выбери подарок в Telegram и подтверди его передачу самостоятельно.");
+
+}
+
+</script>
+
+</body>
+
+</html>
