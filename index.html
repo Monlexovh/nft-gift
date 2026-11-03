@@ -6,199 +6,259 @@
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NFT GIFT</title>
+  <title>NFT Gifts</title>
 
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
 
-<style>
+    * { box-sizing: border-box; }
 
-* {
+    body {
 
-  box-sizing: border-box;
+      margin: 0;
 
-}
+      padding: 24px 16px;
 
-body {
+      background: #101522;
 
-  margin: 0;
+      color: white;
 
-  padding: 25px 15px;
+      font-family: Arial, sans-serif;
 
-  min-height: 100vh;
+      text-align: center;
 
-  background: linear-gradient(145deg,#090711,#26113f);
+    }
 
-  color: white;
+    .container {
 
-  font-family: Arial,sans-serif;
+      max-width: 440px;
 
-}
+      margin: 0 auto;
 
-main {
+    }
 
-  max-width: 430px;
+    h1 { margin-bottom: 8px; }
 
-  margin: 30px auto;
+    .subtitle {
 
-  padding: 25px;
+      color: #aab4ca;
 
-  border: 1px solid #7545a9;
+      margin-bottom: 28px;
 
-  border-radius: 24px;
+    }
 
-  background: #171123;
+    .gifts {
 
-  text-align: center;
+      display: grid;
 
-}
+      grid-template-columns: 1fr 1fr;
 
-.gift {
+      gap: 14px;
 
-  font-size: 75px;
+    }
 
-}
+    .gift {
 
-h1 {
+      background: #202b40;
 
-  color: #c69aff;
+      border: 1px solid #35445f;
 
-  letter-spacing: 3px;
+      border-radius: 18px;
 
-}
+      padding: 22px 10px;
 
-p {
+    }
 
-  color: #c7bbd5;
+    .emoji { font-size: 48px; }
 
-  line-height: 1.6;
+    .gift h3 { margin: 12px 0 6px; }
 
-}
+    .demo {
 
-button {
+      color: #aab4ca;
 
-  width: 100%;
+      font-size: 12px;
 
-  padding: 16px;
+    }
 
-  margin-top: 15px;
+    button, .telegram-link {
 
-  border: 0;
+      display: block;
 
-  border-radius: 12px;
+      width: 100%;
 
-  background: #8046d5;
+      margin-top: 22px;
 
-  color: white;
+      padding: 15px;
 
-  font-size: 16px;
+      border: 0;
 
-  font-weight: bold;
+      border-radius: 12px;
 
-}
+      background: #2698e8;
 
-.gift-card {
+      color: white;
 
-  margin-top: 15px;
+      font-size: 16px;
 
-  padding: 18px;
+      font-weight: bold;
 
-  background: #291d3d;
+      text-decoration: none;
 
-  border-radius: 15px;
+      cursor: pointer;
 
-}
+    }
 
-footer {
+    .note {
 
-  margin-top: 25px;
+      color: #aab4ca;
 
-  font-size: 12px;
+      font-size: 13px;
 
-  color: #9186a5;
+      line-height: 1.5;
 
-}
+      margin-top: 20px;
 
-</style>
+    }
+
+    .instructions {
+
+      display: none;
+
+      margin-top: 20px;
+
+      padding: 18px;
+
+      background: #202b40;
+
+      border-radius: 14px;
+
+      text-align: left;
+
+      line-height: 1.6;
+
+    }
+
+    .instructions h2 {
+
+      font-size: 19px;
+
+      text-align: center;
+
+    }
+
+    .instructions li { margin-bottom: 10px; }
+
+  </style>
 
 </head>
 
 <body>
 
-<main>
+  <main class="container">
 
-  <div class="gift">🎁</div>
+    <h1>🎁 NFT Gifts</h1>
 
-  <h1>NFT GIFT</h1>
+    <p class="subtitle">Демонстрационная витрина подарков Telegram</p>
 
-  <p>Добро пожаловать в мир Telegram NFT!</p>
+    <section class="gifts">
 
-  <div class="gift-card">
+      <article class="gift">
 
-    <div style="font-size:40px">🌹</div>
+        <div class="emoji">🌹</div>
 
-    <h3>Rose</h3>
+        <h3>Rose</h3>
 
-    <p>Коллекционный подарок</p>
+        <div class="demo">Пример подарка</div>
 
-  </div>
+      </article>
 
-  <div class="gift-card">
+      <article class="gift">
 
-    <div style="font-size:40px">💎</div>
+        <div class="emoji">💎</div>
 
-    <h3>Diamond</h3>
+        <h3>Diamond</h3>
 
-    <p>Коллекционный подарок</p>
+        <div class="demo">Пример подарка</div>
 
-  </div>
+      </article>
 
-  <button onclick="connectTelegram()">
+    </section>
 
-    Открыть Telegram
+    <button onclick="showInstructions()">
 
-  </button>
+      Как передать свой подарок
 
-  <button onclick="showInfo()">
+    </button>
 
-    Как передать подарок
+    <section class="instructions" id="instructions">
 
-  </button>
+      <h2>Как передать подарок</h2>
 
-  <footer>
+      <ol>
 
-    Подарки передаются только с согласия владельца.
+        <li>Открой Telegram и найди свой подарок в профиле.</li>
 
-    Демонстрационные карточки не являются реальными NFT.
+        <li>Открой меню самого подарка.</li>
 
-  </footer>
+        <li>Проверь, доступна ли для него передача.</li>
 
-</main>
+        <li>Если передача доступна, следуй инструкциям Telegram.</li>
 
-<script>
+        <li>Перед подтверждением внимательно проверь получателя и условия.</li>
 
-const tg = window.Telegram.WebApp;
+      </ol>
 
-tg.ready();
+      <p>
 
-tg.expand();
+        Передавай только собственные подарки и подтверждай операцию
 
-function connectTelegram() {
+        самостоятельно в официальном приложении Telegram.
 
-  window.open("https://t.me/P3PNFTGIFTS_BOT", "_blank");
+      </p>
 
-}
+    </section>
 
-function showInfo() {
+    <a class="telegram-link"
 
-  alert("Выбери подарок в Telegram и подтверди его передачу самостоятельно.");
+       href="https://t.me/P3PNFTGIFTS_BOT"
 
-}
+       target="_blank"
 
-</script>
+       rel="noopener noreferrer">
+
+      Открыть Telegram-бота
+
+    </a>
+
+    <p class="note">
+
+      Карточки на этой странице — демонстрационные.
+
+      Сайт не получает доступ к аккаунтам и не выполняет передачу подарков.
+
+      Никому не отправляй коды входа и пароли.
+
+    </p>
+
+  </main>
+
+  <script>
+
+    function showInstructions() {
+
+      const section = document.getElementById("instructions");
+
+      section.style.display =
+
+        section.style.display === "block" ? "none" : "block";
+
+    }
+
+  </script>
 
 </body>
 
